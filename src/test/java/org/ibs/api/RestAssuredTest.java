@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.*;
 public class RestAssuredTest {
     private static final String URI = "http://localhost:8080";
     @Test
-    void test() {
+    void addProductTest() {
         Specifications.installSpecifications(Specifications.requestSpec(URI),
                 Specifications.responseSpec(200));
 
@@ -21,7 +21,7 @@ public class RestAssuredTest {
     }
 
     @Test
-    public void deleteGood() {
+    public void deleteProductTest() {
         Specifications.installSpecifications(Specifications.requestSpec(URI),
                 Specifications.responseSpec(200));
         given()
@@ -33,7 +33,7 @@ public class RestAssuredTest {
                 .statusCode(200);
     }
     @Test
-    public void getGoods(){
+    public void getProductsTest(){
         Specifications.installSpecifications(Specifications.requestSpec(URI),
                 Specifications.responseSpec(200));
         given()
