@@ -11,6 +11,9 @@ public class GoodsData {
         this.exotic = exotic;
     }
 
+    public GoodsData() {
+    }
+
     public String getName() {
         return name;
     }
