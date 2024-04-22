@@ -26,16 +26,6 @@ public class RestAssuredTest {
     }
     @Test
     void addProductTest() {
-        List<GoodsData> beforePostList = given()
-                .when()
-                .get("/api/food")
-                .then()
-                .log().all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getList("", GoodsData.class);
-
         GoodsData sendData = new GoodsData("Джекфрут", "FRUIT", true);
 
         cookies = given()
