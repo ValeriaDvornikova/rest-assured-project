@@ -18,12 +18,14 @@ public class RestAssuredTest {
     private static final int INIT_SIZE = 4;
     private final Map<String, String> withoutContentHeaders = Map.of("connection", "keep-alive", "content-length", "0");
 
-    private static Map<String,String> cookies;
+    private static Map<String, String> cookies;
+
     @BeforeEach
     void setUp() {
         Specifications.installSpecifications(Specifications.requestSpec(URI),
                 Specifications.responseSpec(HttpStatus.SC_OK));
     }
+
     @Test
     void addProductTest() {
         GoodsData sendData = new GoodsData("Джекфрут", "FRUIT", true);
@@ -56,7 +58,7 @@ public class RestAssuredTest {
                         hasProperty("name", equalTo(sendData.getName())),
                         hasProperty("type", equalTo(sendData.getType())),
                         hasProperty("exotic", equalTo(sendData.getExotic())
-                ))))
+                        ))))
         );
     }
 
@@ -72,7 +74,7 @@ public class RestAssuredTest {
     }
 
     @Test
-    public void getProductsTest(){
+    public void getProductsTest() {
         given()
                 .when()
                 .get("/api/food")
@@ -88,6 +90,7 @@ public class RestAssuredTest {
                         everyItem(notNullValue())
                 ));
     }
+
     @AfterEach
     public void after() {
         deleteProductTest(); // удаление добавленые товары и приводит список к исходному
