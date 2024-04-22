@@ -67,8 +67,8 @@ public class RestAssuredTest {
                 .post("/api/data/reset")
                 .then()
                 .log().all()
-                .assertThat();
-                //.headers(withoutContentHeaders);
+                .assertThat()
+                .headers(withoutContentHeaders);
     }
 
     @Test
