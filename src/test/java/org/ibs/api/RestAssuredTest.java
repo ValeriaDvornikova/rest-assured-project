@@ -93,6 +93,6 @@ public class RestAssuredTest {
 
     @AfterEach
     public void after() {
-        deleteProductTest(); // удаление добавленые товары и приводит список к исходному
+        deleteProductTest(); // удаление добавленных товары, и приведение списка к исходному состоянию
     }
 }
